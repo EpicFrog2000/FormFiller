@@ -52,12 +52,12 @@ if __name__ == "__main__":
         bot.OpenForm("https://docs.google.com/forms/d/e/1FAIpQLSdQI-VK9i91942aHII7O_nZ6QxDx14ekVBnz6V5FfWjYFsGbQ/viewform")
         pytania = bot.GetPytania()
         if pytania: 
-            bot.WybierzOpcjeRadioButton(pytania[0], (random.randint(0, 4))) # Jak często podróżujesz pociągiem?
-            bot.WybierzOpcjeRadioButton(pytania[1], (random.randint(0, 5))) # Ile masz lat?
-            bot.WybierzOpcjeRadioButton(pytania[2], (random.randint(0, 4))) # W jakim celu najczęściej podróżujesz?
-            bot.WybierzOpcjeCheckButton(pytania[3], (random.randint(0, 4))) # Z którym z wymienionych problemów spotkałeś się podczas podróży pociągiem?
-            bot.WybierzOpcjeRadioButton(pytania[4], (random.randint(0, 3))) # Który problem jest według ciebie najpoważniejszy?
+            bot.WybierzOpcjeRadioButton(pytania[0], random.choices([0, 1, 2, 3, 4], [2, 2, 2, 2, 1])[0]) # Jak często podróżujesz pociągiem?
+            bot.WybierzOpcjeRadioButton(pytania[1], random.choices([0,1,2,3,4,5], [4, 4, 4, 4, 4, 4])[0]) # Ile masz lat?
+            bot.WybierzOpcjeRadioButton(pytania[2], random.choices([0,1,2,3,4], [0, 1, 0, 1, 0])[0]) # W jakim celu najczęściej podróżujesz?
+            bot.WybierzOpcjeCheckButton(pytania[3], random.choices([0,1,2,3,4], [0, 3, 0, 3, 0])[0]) # Z którym z wymienionych problemów spotkałeś się podczas podróży pociągiem?
+            bot.WybierzOpcjeRadioButton(pytania[4], random.choices([0,1,2,3], [3, 3, 0, 3])[0]) # Który problem jest według ciebie najpoważniejszy?
             bot.WybierzOpcjeSkali(pytania[5], (random.randint(0, 9))) # W skali od 1 do 10, jak bardzo wcześniej zaznaczone problemy wpływają na twoją podróż? (1- nie wpływa, 10 - uniemożliwia podróż)
             bot.WybierzOpcjeSkali(pytania[6], (random.randint(0, 9))) # Jak oceniasz ogólny poziom bezpieczeństwa podczas podróży pociągiem?  (1 - bardzo niebezpiecznie, 10 - bardzo bezpiecznie)
-            bot.WybierzOpcjeCheckButton(pytania[7], (random.randint(0, 1))) # Czy byłbyś zainteresowany którymś z tych rozwiązań?
+            bot.WybierzOpcjeCheckButton(pytania[7], random.choices([0,1], [1, 1])[0]) # Czy byłbyś zainteresowany którymś z tych rozwiązań?
             bot.Prześlij()
